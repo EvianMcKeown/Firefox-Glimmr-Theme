@@ -1,0 +1,281 @@
+:root:not([inDOMFullscreen], [chromehidden~="toolbar"]) {
+  #tabbrowser-tabbox browser:not(.devtools-toolbox-bottom-iframe, .devtools-toolbox-side-iframe) {
+    border-radius: 12px;
+    clip-path: inset(0 round 14px);
+    -moz-window-dragging: no-drag;
+  }
+}
+
+.browserStack {
+  border-radius: 12px;
+  margin: 0 6px 6px;
+  box-shadow: 0 1.5px 9x light-dark(rgba(26, 26, 26, 1), #00000040);
+}
+
+/* Search bar background blur */
+:root {
+  clip-path: inset(0 round 12px);
+}
+
+hbox#urlbar-background {
+  background: rgba(48, 48, 48, 0.4) !important;
+  outline: none !important;
+  border: none !important;
+  box-shadow: 0 0px 6px rgba(0, 0, 0, 0.4) !important;
+}
+
+#urlbar:is([open]) hbox#urlbar-background {
+  background: linear-gradient(rgba(26, 26, 26, 1) 20%, rgba(26, 26, 26, 0.4) 35%) !important;
+  border-top-right-radius: 12px !important;
+  border-top-left-radius: 12px !important;
+  border-bottom-right-radius: 12px !important;
+  border-bottom-left-radius: 12px !important;
+  backdrop-filter: blur(35px) brightness(75%) saturate(150%) !important;
+  box-shadow: 0px 0px 30px rgba(26, 26, 26, 0.8) !important;
+}
+
+.urlbarView-row {
+  &[selected] {
+    background-color: transparent !important;
+  }
+}
+
+/* Remove right hand side .titlebar-spacer */
+.titlebar-spacer {
+  display: none !important;
+}
+
+/* Colour variables */
+:root {
+  --toolbar-bgcolor: #1a1a1a48 !important;
+  /* Toolbar background */
+  --toolbar-color: #ffffff !important;
+  /* Toolbar icon/text color */
+  --tabpanel-background-color: #1a1a1a48 !important;
+  /* Url toolbar text color*/
+  --toolbar-field-focus-color: rgba(235, 235, 235, 1) !important;
+  /* Link colour in URL bar*/
+  --link-color: rgba(235, 235, 235, 0.8) !important;
+}
+/* Change selected text background in the URL bar */
+#urlbar-input::selection {
+  background: rgba(100, 100, 100, 0.6) !important;   /* Replace with your preferred color */
+}
+
+#navigator-toolbox,
+#TabsToolbar,
+#nav-bar,
+#PersonalToolbar {
+  background-color: var(--toolbar-bgcolor) !important;
+  color: var(--toolbar-color) !important;
+  border-bottom: none !important;
+}
+#TabsToolbar::after,
+#nav-bar::before {
+  border: none !important;
+  background: none !important;
+  box-shadow: none !important;
+  height: 0 !important;
+  display: none !important;
+  opacity: 0 !important;
+}
+
+
+.toolbarbutton-icon,
+.toolbarbutton-text,
+.toolbarbutton-badge {
+  fill: var(--toolbar-color) !important;
+  color: var(--toolbar-color) !important;
+}
+
+
+#page-action-buttons {
+  padding-inline-start: 8px;
+}
+
+.urlbar-page-action {
+  margin-inline-end: calc(-18px - 2 * var(--urlbar-icon-padding));
+  opacity: 0;
+  transition: margin-inline-end 100ms linear, opacity 200ms linear;
+}
+
+#page-action-buttons:hover > .urlbar-page-action,
+#page-action-buttons:focus-within > .urlbar-page-action,
+.urlbar-page-action[open],
+.urlbar-page-action[open]~.urlbar-page-action {
+  opacity: 1;
+  margin-inline-end: 0px !important;
+}
+
+/* Make the hover area extend to the left */
+#page-action-buttons {
+  position: relative;
+}
+#page-action-buttons::before {
+  content: "";
+  position: absolute;
+  left: -32px; /* Increase this value to expand hover area further left */
+  top: 0;
+  bottom: 0;
+  width: 32px;
+  pointer-events: auto;
+}
+
+/* Changes various in-UI scrollabars to be slim and more subtle */
+.panel-subview-body,
+#permList,
+scrollbar {
+  color: inherit;
+  scrollbar-color: currentColor transparent;
+  scrollbar-width: thin
+}
+
+/* browser content Border & Shadow */
+#browser {
+  /*-content-area-shadow: none !important; */
+  --chrome-content-separator-color: none !important;
+}
+
+/* nav bar bottom border */
+#navigator-toolbox {
+  border-bottom: 0 !important;
+  border-top: 0 !important;
+}
+
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/compact_extensions_panel.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/* This style hides some information from the extensions-button panel, but makes it appear more compact. Might be useful for someone having lot of extensions */
+
+#unified-extensions-view {
+  --uei-icon-size: 16px;
+}
+
+.unified-extensions-item-menu-button.subviewbutton {
+  padding: 0px !important;
+  margin-inline-end: 0 !important;
+}
+
+.unified-extensions-item-action-button.subviewbutton {
+  padding-block: 6px !important;
+}
+
+.unified-extensions-item-menu-button.subviewbutton>.toolbarbutton-icon {
+  padding: 4px !important;
+}
+
+.unified-extensions-item-message-deck {
+  display: none
+}
+
+#unified-extensions-view>vbox>vbox>.unified-extensions-item {
+  padding-block: 0px !important;
+}
+
+#unified-extensions-panel .unified-extensions-item {
+  margin-block: 0 !important;
+}
+
+
+/* Remove border/shadow between tab bar and nav bar */
+#TabsToolbar {
+  border-bottom: none !important;
+  border-top: none !important;
+  box-shadow: none !important;
+}
+
+#nav-bar {
+  border-top: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+
+#TabsToolbar::after,
+#nav-bar::before {
+  border: none !important;
+  background: none !important;
+  box-shadow: none !important;
+  height: 0 !important;
+  display: none !important;
+  opacity: 0 !important;
+}
+
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/tabs_on_bottom_v2.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+/* This reorders toolbar to place tabs below other toolbars. Requires Firefox 133+ */
+@media (-moz-bool-pref: "userchrome.force-window-controls-on-left.enabled"),
+       -moz-pref("userchrome.force-window-controls-on-left.enabled"){
+  #nav-bar > .titlebar-buttonbox-container{
+    order: -1 !important;
+    > .titlebar-buttonbox{
+      flex-direction: row-reverse;
+    }
+  }
+}
+@media not (-moz-bool-pref: "sidebar.verticalTabs"),
+       not -moz-pref("sidebar.verticalTabs"){
+  .global-notificationbox,
+  #tab-notification-deck,
+  #TabsToolbar{
+    order: 1;
+  }
+  #TabsToolbar > .titlebar-buttonbox-container{
+    display: none;
+  }
+  :root[sizemode="fullscreen"] #nav-bar > .titlebar-buttonbox-container{
+    display: flex !important;
+  }
+  :root:is([tabsintitlebar],[customtitlebar]) #toolbar-menubar:not([autohide="false"]) ~ #nav-bar{
+    > .titlebar-buttonbox-container{
+      display: flex !important;
+    }
+    :root[sizemode="normal"] & {
+      > .titlebar-spacer{
+        display: none !important;
+      }
+    }
+    :root[sizemode="maximized"] & {
+      > .titlebar-spacer[type="post-tabs"]{
+        display: flex !important;
+      }
+      @media (-moz-bool-pref: "userchrome.force-window-controls-on-left.enabled"),
+        -moz-pref("userchrome.force-window-controls-on-left.enabled"),
+        (-moz-gtk-csd-reversed-placement),
+        (-moz-platform: macos){
+        > .titlebar-spacer[type="post-tabs"]{
+          display: none !important;
+        }
+        > .titlebar-spacer[type="pre-tabs"]{
+          display: flex !important;
+        }
+      }
+    }
+  }
+}
+
+
+
+/* Custom tab bar stuff */
+:root {
+  --tab-min-height: 20px !important;
+  --tab-max-height: 20px !important;
+}
+
+#tabbrowser-tabs{
+  margin-left: 6px;
+  margin-rght: 6px;
+}
+/* Rounded tabs */
+.tab-background,
+.tab-loading-burst {
+    border: none !important;
+    border-radius: 8px !important;
+}
+
+
+/* Rounded URL bar */
+#urlbar-background
+{
+  border-radius: 8px !important;
+}

@@ -1,0 +1,16 @@
+@-moz-document url("about:newtab"), url("about:home") {
+  body {
+    background-color: rgba(48, 48, 48, 0.4) !important;
+  }
+
+  .outer-wrapper, .non-collapsible-section, .collapsible-section {
+    background: transparent !important;
+    background-color: transparent !important;
+  }
+
+  .top-sites-list, .search-wrapper, .top-site-outer {
+    /*background-color: rgba(26, 26, 26, 0.0) !important; /* optional blur card effect */
+    /*backdrop-filter: blur(20px);*/
+    border-radius: 12px;
+  }
+}
